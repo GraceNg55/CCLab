@@ -1,0 +1,28 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(106, 39, 59);
+}
+
+h1{
+  font-family: sans-serif;
+    color: aquamarine;
+}
+p{
+  font-family: sans-serif;
+    color: aquamarine;
+}
+
+
+canvas {
+  display: block;
+  margin-left: 455px;
+  border: 8px rgb(237, 131, 149) dashed;
+  padding: 6px;
+}
+
+
+
+.wrapper{
+    
+}
