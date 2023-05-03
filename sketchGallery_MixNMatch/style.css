@@ -1,0 +1,48 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(86, 10, 86);
+}
+
+canvas {
+    display: block;
+    border: 8px rgb(237, 131, 149) dashed;
+    padding: 6px;
+}
+
+h1{
+    font-family: sans-serif;
+      color: rgb(233, 129, 144);
+  }
+
+/* 
+the "#" let's us style 
+the elemnt with a given ID
+ */
+#canvasContainer{
+   margin-left: 120px; 
+    /* border-style: solid;
+    border-color: red;
+    border-width: 1px; */
+
+    width: 400px;
+    display: inline-block;
+}
+.textBox{
+    /* border: solid 1px green;
+    width: 100px;
+    display: inline-block; */
+}
+.textBox p{
+    margin: 0;
+}
+
+.wrapper{
+    
+    width: 504px;
+    /* border: 2px dashed black; */
+    display: inline-block;
+    margin: auto;
+}
+
+
