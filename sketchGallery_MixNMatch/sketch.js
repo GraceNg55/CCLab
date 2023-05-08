@@ -40,11 +40,11 @@ gmouth = new googooMouth(1100, 400);
 gblush = new googooBlush(1100, 480);
 
  //lamby
- lbow = new LambyBow(width / 2, height / 2);
- lbody = new LambyBody(width / 2, height / 2);
- leyes = new LambyEyes(width / 2, height / 2);
- lmouth = new LambyMouth(width / 2, height / 2);
- lblush = new LambyBlush(width / 2, height / 2);
+ lbow = new LambyBow(500, height / 2);
+ lbody = new LambyBody(600 / 2, height / 2);
+ leyes = new LambyEyes(700, height / 2);
+ lmouth = new LambyMouth(800, height / 2);
+ lblush = new LambyBlush(900, height / 2);
 
 }
 
@@ -639,7 +639,7 @@ class flowerPetals {
     constructor(startX, startY, s) {
       this.x = startX;
       this.y = startY;
-      this.scale = 2;
+      this.scale = 1.4;
       this.dragg = false;
     }
   
@@ -694,7 +694,7 @@ class flowerPetals {
     constructor(startX, startY, s) {
       this.x = startX;
       this.y = startY;
-      this.scale = 2;
+      this.scale = 1.4;
       this.dragg = false;
     }
   
@@ -745,7 +745,7 @@ class flowerPetals {
     constructor(startX, startY, s) {
       this.x = startX;
       this.y = startY;
-      this.scale = 2;
+      this.scale = 1.4;
       this.dragg = false;
     }
   
@@ -793,7 +793,7 @@ class flowerPetals {
     constructor(startX, startY, s) {
       this.x = startX;
       this.y = startY;
-      this.scale = 2;
+      this.scale = 1.4;
       this.dragg = false;
     }
   
@@ -843,7 +843,7 @@ class flowerPetals {
     constructor(startX, startY, s) {
       this.x = startX;
       this.y = startY;
-      this.scale = 2;
+      this.scale = 1.4;
       this.dragg = false;
     }
   
