@@ -26,27 +26,59 @@
 </head>
 
 
+
+
+
+<html>
+<head>
+<script>
+function show(shown, hidden) {
+  document.getElementById(shown).style.display='block';
+  document.getElementById(hidden).style.display='none';
+  return false;
+}
+</script>
+</head>
 <body>
+    
+  <div id="Page1">
+    Content of page 1
+    <a href="#" onclick="return show('Page2','Page1');">Show page 2</a>
+  </div>
+    
+  <div id="Page2" style="display:none">
+    Content of page 2
+    <a href="#" onclick="return show('Page1','Page2');">Show page 1</a>
+  </div>
+    
+</body>
+</html>
+
+
+
+
+
+<!-- <body>
 
   <div class="a">
     <h1>Roller Skating Capybara</h1>
   </div>
 
 
-  <!-- the following div will contain the p5 canvas. -->
+  the following div will contain the p5 canvas. -->
 
-  <div class="wrapper">
+  <!-- <div class="wrapper">
     </div><div id="canvasContainer"></div>
-  </div>
+  </div> -->
 
 
-  <div class="b">
+  <!-- <div class="b">
     <p>This Is A Capybara That Likes Roller Skating</p>
-  </div>
+  </div> -->
 
 
   <!-- the script tag below should always be at the bottom, right before the closing body tag -->
-  <script src="sketch.js"></script>
-</body>
+  <!-- <script src="sketch.js"></script>
+</body> -->
 
 </html>

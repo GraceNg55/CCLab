@@ -17,20 +17,23 @@ function setup(){
     cnv.parent("canvasContainer");
 
 //flower
-fpetals = new flowerPetals(100, 130);
+fpetals = new flowerPetals(100, 90);
 fbody = new flowerBody(100, 280);
-feyes = new flowerEyes(100, 600);
+feyes = new flowerEyes(100, 565);
 fmouth = new flowerMouth(100, 470);
 fblush = new flowerBlush(100, 530);
 let angle = 10;
 let angleInRadians = radians(angle);
 
 //googoo
-ghat = new googooHat(1100, 140);
+ghat = new googooHat(1100, 50);
 gbody = new googooBody(1100, 170);
-geyes = new googooEyes(1100, 580);
+geyes = new googooEyes(1100, 540);
 gmouth = new googooMouth(1100, 400);
 gblush = new googooBlush(1100, 480);
+
+
+
 
 }
 
@@ -72,6 +75,9 @@ function draw(){
     ghat.update();
     ghat.display();
 
+    // fill(0);
+    // text(mouseY + "  " + mouseY, mouseX, mouseY)
+
 }
 
 
@@ -79,7 +85,7 @@ class flowerPetals {
     constructor(startX, startY, s) {
       this.x = startX;
       this.y = startY;
-      this.scale = 0.65;
+      this.scale = 0.60;
       this.dragg = false;
     }
   
@@ -98,25 +104,32 @@ class flowerPetals {
       fill(250, 238, 10);
       for (let i = 0; i < 16; i++) {
         push();
-        translate(0, -60);
+        translate(0, 0);
         rotate(((PI * 2) / 16) * i);
         circle(0 - 100, 0, 50);
         pop();
       }
-      // noFill();
-      // stroke(0);
-      // rect(-130,-190,260,260)
+
+      fill(255);
+      circle(0,0,5);
+
+      noFill();
+      stroke(0);
+      rect(-130,-130,260,260)
       pop();
     }
     checkMousePressed() {
       if (
         mouseX > this.x - 130 &&
         mouseX < this.x + 130 &&
-        mouseY > this.y - 190 &&
-        mouseY < this.y + 70
+        mouseY > this.y - 130 &&
+        mouseY < this.y + 130
       ) {
         console.log("figure Pressed!");
         this.dragg = true;
+        return true
+      }else{
+        return false
       }
     }
     disableDragg() {
@@ -128,7 +141,7 @@ class flowerPetals {
     constructor(startX, startY, s) {
       this.x = startX;
       this.y = startY;
-      this.scale = 0.65;
+      this.scale = 0.60;
       this.dragg = false;
     }
   
@@ -150,9 +163,13 @@ class flowerPetals {
       arc(0, 50, 100, 300, 0, PI);
       fill(255, 252, 230);
       circle(0, -60, 180);
-      // noFill();
-      // stroke(0);
-      // rect(-100,-150,200,350)
+
+      fill(0);
+      circle(0,0,5);
+
+      noFill();
+      stroke(0);
+      rect(-100,-150,200,350)
       pop();
     }
     checkMousePressed() {
@@ -164,6 +181,9 @@ class flowerPetals {
       ) {
         console.log("figure Pressed!");
         this.dragg = true;
+        return true
+      }else{
+        return false
       }
     }
     disableDragg() {
@@ -175,7 +195,7 @@ class flowerPetals {
     constructor(startX, startY, s) {
       this.x = startX;
       this.y = startY;
-      this.scale = 0.65;
+      this.scale = 0.60;
       this.dragg = false;
     }
   
@@ -192,22 +212,29 @@ class flowerPetals {
       scale(this.scale);
       noStroke();
       fill("black");
-      circle(-50, -60, 30);
-      circle(50, -60, 30);
-      // noFill();
-      // stroke(0);
-      // rect(-70,-80,140,40)
+      circle(-50, 0, 30);
+      circle(50, 0, 30);
+
+      fill(255);
+      circle(0,0,5);
+
+      noFill();
+      stroke(0);
+      rect(-70,-20,140,40)
       pop();
     }
     checkMousePressed() {
       if (
         mouseX > this.x - 70 &&
         mouseX < this.x + 70 &&
-        mouseY > this.y - 80 &&
-        mouseY < this.y - 40
+        mouseY > this.y - 20 &&
+        mouseY < this.y + 20
       ) {
         console.log("figure Pressed!");
         this.dragg = true;
+        return true
+      }else{
+        return false
       }
     }
     disableDragg() {
@@ -219,7 +246,7 @@ class flowerPetals {
     constructor(startX, startY, s) {
       this.x = startX;
       this.y = startY;
-      this.scale = 0.65;
+      this.scale = 0.60;
       this.dragg = false;
     }
   
@@ -236,21 +263,28 @@ class flowerPetals {
       scale(this.scale);
       noStroke();
       fill("black");
-      arc(0, -40, 30, 30, 0, PI);
-      // noFill();
-      // stroke(0);
-      // rect(-20,-45,40,25)
+      arc(0, -10, 30, 30, 0, PI);
+
+      fill(255);
+      circle(0,0,5);
+
+      noFill();
+      stroke(0);
+      rect(-20,-15,40,25)
       pop();
     }
     checkMousePressed() {
       if (
         mouseX > this.x - 20 &&
         mouseX < this.x + 20 &&
-        mouseY > this.y - 45 &&
-        mouseY < this.y - 20
+        mouseY > this.y - 15 &&
+        mouseY < this.y + 10
       ) {
         console.log("figure Pressed!");
         this.dragg = true;
+        return true
+      }else{
+        return false
       }
     }
     disableDragg() {
@@ -262,7 +296,7 @@ class flowerPetals {
     constructor(startX, startY, s) {
       this.x = startX;
       this.y = startY;
-      this.scale = 0.65;
+      this.scale = 0.60;
       this.dragg = false;
     }
   
@@ -279,22 +313,30 @@ class flowerPetals {
       scale(this.scale);
       noStroke();
       fill(255, 36, 61);
-      ellipse(-50, -38, 20, 10);
-      ellipse(50, -38, 20, 10);
-      // noFill();
-      // stroke(0);
-      // rect(-65,-50,130,25)
+      ellipse(-50, 0, 20, 10);
+      ellipse(50, 0, 20, 10);
+
+      fill(255);
+      circle(0,0,5);
+
+      noFill();
+      stroke(0);
+      rect(-65,-10,130,25)
+      
       pop();
     }
     checkMousePressed() {
       if (
         mouseX > this.x - 65 &&
         mouseX < this.x + 65 &&
-        mouseY > this.y - 50 &&
-        mouseY < this.y - 25
+        mouseY > this.y - 10 &&
+        mouseY < this.y + 15
       ) {
         console.log("figure Pressed!");
         this.dragg = true;
+        return true
+      }else{
+        return false
       }
     }
     disableDragg() {
@@ -306,7 +348,7 @@ class flowerPetals {
     constructor(startX, startY, s) {
       this.x = startX;
       this.y = startY;
-      this.scale = 0.65;
+      this.scale = 0.60;
       this.dragg = false;
     }
   
@@ -323,13 +365,17 @@ class flowerPetals {
       scale(this.scale);
       noStroke();
       fill(0);
-      rect(-25, -190, 50, 50);
-      ellipse(0, -150, 80, 30);
+      rect(-25, -25, 50, 50);
+      ellipse(0, 15, 80, 30);
       fill("pink");
-      ellipse(0, -165, 50, 5);
-      // noFill();
-      // stroke(0);
-      // rect(-40,-190,80,55)
+      ellipse(0, 0, 50, 5);
+
+      fill(255);
+      circle(0,0,5);
+
+      noFill();
+      stroke(0);
+      rect(-40,-25,80,55)
       pop();
     }
     checkMousePressed() {
@@ -341,6 +387,9 @@ class flowerPetals {
       ) {
         console.log("figure Pressed!");
         this.dragg = true;
+        return true
+      }else{
+        return false
       }
     }
     disableDragg() {
@@ -352,7 +401,7 @@ class flowerPetals {
     constructor(startX, startY, s) {
       this.x = startX;
       this.y = startY;
-      this.scale = 0.65;
+      this.scale = 0.60;
       this.dragg = false;
     }
   
@@ -381,9 +430,13 @@ class flowerPetals {
       circle(98, -115, 18);
       rect(-98, -120, 50, 10, 10);
       circle(-98, -115, 18);
-      // noFill();
-      // stroke(0);
-      // rect(-110,-150,220,395)
+
+      fill(255);
+      circle(0,0,5);
+
+      noFill();
+      stroke(0);
+      rect(-110,-150,220,395)
       pop();
     }
     checkMousePressed() {
@@ -395,6 +448,9 @@ class flowerPetals {
       ) {
         console.log("figure Pressed!");
         this.dragg = true;
+        return true
+      }else{
+        return false
       }
     }
     disableDragg() {
@@ -406,7 +462,7 @@ class flowerPetals {
     constructor(startX, startY, s) {
       this.x = startX;
       this.y = startY;
-      this.scale = 0.65;
+      this.scale = 0.60;
       this.dragg = false;
     }
   
@@ -423,25 +479,32 @@ class flowerPetals {
       scale(this.scale);
       noStroke();
       fill("white");
-      circle(-50, -60, 30);
-      circle(50, -60, 30);
+      circle(-50, 0, 30);
+      circle(50, 0, 30);
       fill("black");
-      circle(-44, -60, 15);
-      circle(56, -60, 15);
-      // noFill();
-      // stroke(0);
-      // rect(-70,-80,140,40)
+      circle(-44, 0, 15);
+      circle(56, 0, 15);
+
+      fill(255);
+      circle(0,0,5);
+
+      noFill();
+      stroke(0);
+      rect(-70,-20,140,40)
       pop();
     }
     checkMousePressed() {
       if (
         mouseX > this.x - 70 &&
         mouseX < this.x + 70 &&
-        mouseY > this.y - 80 &&
-        mouseY < this.y - 40
+        mouseY > this.y - 20 &&
+        mouseY < this.y + 20
       ) {
         console.log("figure Pressed!");
         this.dragg = true;
+        return true
+      }else{
+        return false
       }
     }
     disableDragg() {
@@ -453,7 +516,7 @@ class flowerPetals {
     constructor(startX, startY, s) {
       this.x = startX;
       this.y = startY;
-      this.scale = 0.65;
+      this.scale = 0.60;
       this.dragg = false;
     }
   
@@ -470,22 +533,29 @@ class flowerPetals {
       scale(this.scale);
       noStroke();
       fill("white");
-      arc(-5, -40, 15, 30, 0, PI);
-      arc(5, -40, 15, 30, 0, PI);
-      // noFill();
-      // stroke(0);
-      // rect(-20,-45,40,25)
+      arc(-5, -5, 15, 30, 0, PI);
+      arc(5, -5, 15, 30, 0, PI);
+
+      fill(0);
+      circle(0,0,5);
+
+      noFill();
+      stroke(0);
+      rect(-20,-10,40,25)
       pop();
     }
     checkMousePressed() {
       if (
         mouseX > this.x - 20 &&
         mouseX < this.x + 20 &&
-        mouseY > this.y - 45 &&
-        mouseY < this.y - 20
+        mouseY > this.y - 10 &&
+        mouseY < this.y + 15
       ) {
         console.log("figure Pressed!");
         this.dragg = true;
+        return true
+      }else{
+        return false
       }
     }
     disableDragg() {
@@ -497,7 +567,7 @@ class flowerPetals {
     constructor(startX, startY, s) {
       this.x = startX;
       this.y = startY;
-      this.scale = 0.65;
+      this.scale = 0.60;
       this.dragg = false;
     }
   
@@ -514,22 +584,29 @@ class flowerPetals {
       scale(this.scale);
       noStroke();
       fill(255, 186, 188);
-      ellipse(-50, -35, 20, 10);
-      ellipse(50, -35, 20, 10);
-      // noFill();
-      // stroke(0);
-      // rect(-65,-50,130,25)
+      ellipse(-50, 0, 20, 10);
+      ellipse(50, 0, 20, 10);
+
+      fill(255);
+      circle(0,0,5);
+
+      noFill();
+      stroke(0);
+      rect(-65,-10,130,25)
       pop();
     }
     checkMousePressed() {
       if (
         mouseX > this.x - 65 &&
         mouseX < this.x + 65 &&
-        mouseY > this.y - 50 &&
-        mouseY < this.y - 25
+        mouseY > this.y - 0 &&
+        mouseY < this.y + 10
       ) {
         console.log("figure Pressed!");
         this.dragg = true;
+        return true
+      }else{
+        return false
       }
     }
     disableDragg() {
@@ -541,18 +618,30 @@ class flowerPetals {
     console.log("hi");
   
     //flower
-    fbody.checkMousePressed();
-    feyes.checkMousePressed();
-    fmouth.checkMousePressed();
-    fblush.checkMousePressed();
-    fpetals.checkMousePressed();
+    // fbody.checkMousePressed();
+    // feyes.checkMousePressed();
+    // fmouth.checkMousePressed();
+    // fblush.checkMousePressed();
+    // fpetals.checkMousePressed();
   
     //googoo
-    gbody.checkMousePressed();
-    geyes.checkMousePressed();
-    gmouth.checkMousePressed();
-    gblush.checkMousePressed();
-    ghat.checkMousePressed();
+    // gbody.checkMousePressed();
+    // geyes.checkMousePressed();
+    // gmouth.checkMousePressed();
+    // gblush.checkMousePressed();
+    // ghat.checkMousePressed();
+    let parts = [ghat, fpetals, gblush, fblush, gmouth, fmouth, geyes, feyes, gbody, fbody];
+
+    for(let i = 0; i < 5; i++){
+      // console.log(parts[i])
+      let returnValue = parts[i].checkMousePressed();
+      if(returnValue == true){
+        console.log("stopping the loop because the element printed below was clicked")
+        console.log(parts[i])
+        break;
+      }
+    }
+
   
   }
   
@@ -574,3 +663,27 @@ class flowerPetals {
   
   }
   
+
+
+
+
+
+// leon office hour
+// a function can return a value 
+// this is called "fruitful" function
+
+  // function giveMeFive(){
+  //   return true
+  // }
+
+  // let grace = giveMeFive();
+  // console.log(grace)
+
+  // function dotheMath(inputValue){
+  //   let result = inputValue + 3;
+  //   return result;
+  // }
+
+  // console.log( dotheMath(9)  )
+
+ 

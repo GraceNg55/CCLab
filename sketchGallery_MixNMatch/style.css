@@ -45,4 +45,9 @@ the elemnt with a given ID
     margin: auto;
 }
 
+.myImage {
+    width: 100px;
+    border: 2px black dashed;
+}
+
 
