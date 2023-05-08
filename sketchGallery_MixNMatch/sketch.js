@@ -12,6 +12,13 @@ let gmouth;
 let gblush;
 let ghat;
 
+//lamby
+let lbody;
+let leyes;
+let lmouth;
+let lblush;
+let lbow;
+
 function setup(){
     let cnv = createCanvas(1200, 600);
     cnv.parent("canvasContainer");
@@ -32,8 +39,12 @@ geyes = new googooEyes(1100, 540);
 gmouth = new googooMouth(1100, 400);
 gblush = new googooBlush(1100, 480);
 
-
-
+ //lamby
+ lbow = new LambyBow(width / 2, height / 2);
+ lbody = new LambyBody(width / 2, height / 2);
+ leyes = new LambyEyes(width / 2, height / 2);
+ lmouth = new LambyMouth(width / 2, height / 2);
+ lblush = new LambyBlush(width / 2, height / 2);
 
 }
 
@@ -46,34 +57,44 @@ function draw(){
     rect(1000, 0, 200, 600);
   
     //bodies
-    fbody.update();
-    fbody.display();
-    gbody.update();
-    gbody.display();
-    
-    //eyes
-    feyes.update();
-    feyes.display();
-    geyes.update();
-    geyes.display();
-    
-    //mouths
-    fmouth.update();
-    fmouth.display();
-    gmouth.update();
-    gmouth.display();
-    
-    //blushes
-    fblush.update();
-    fblush.display();
-    gblush.update();
-    gblush.display();
-    
-    //other
-    fpetals.update();
-    fpetals.display();
-    ghat.update();
-    ghat.display();
+  fbody.update();
+  fbody.display();
+  gbody.update();
+  gbody.display();
+  lbody.update();
+  lbody.display();
+  
+  //eyes
+  feyes.update();
+  feyes.display();
+  geyes.update();
+  geyes.display();
+  leyes.update();
+  leyes.display();
+  
+  //mouths
+  fmouth.update();
+  fmouth.display();
+  gmouth.update();
+  gmouth.display();
+  lmouth.update();
+  lmouth.display();
+  
+  //blushes
+  fblush.update();
+  fblush.display();
+  gblush.update();
+  gblush.display();
+  lblush.update();
+  lblush.display();
+  
+  //other
+  fpetals.update();
+  fpetals.display();
+  ghat.update();
+  ghat.display();
+  lbow.update();
+  lbow.display();
 
     // fill(0);
     // text(mouseY + "  " + mouseY, mouseX, mouseY)
@@ -613,6 +634,285 @@ class flowerPetals {
       this.dragg = false;
     }
   }
+
+  class LambyMouth {
+    constructor(startX, startY, s) {
+      this.x = startX;
+      this.y = startY;
+      this.scale = 2;
+      this.dragg = false;
+    }
+  
+    update() {
+      if (this.dragg == true) {
+        this.x = mouseX;
+        this.y = mouseY;
+      }
+    }
+  
+    display() {
+      push();
+      translate(this.x, this.y);
+      scale(this.scale);
+      noStroke();
+      fill(255, 235, 238);
+      ellipse(0, -40, 25, 32);
+      fill("black");
+      ellipse(-4, -45, 6, 3);
+      ellipse(4, -45, 6, 3);
+      fill(255, 199, 207);
+      ellipse(0, -36, 2, 14);
+      ellipse(-4, -30, 6, 2);
+      ellipse(4, -30, 6, 2);
+  
+      
+      // noFill();
+      // stroke(0);
+      // rect(-15,-60,30,40)
+      pop();
+    }
+    checkMousePressed() {
+      if (
+        mouseX > this.x - 15 &&
+        mouseX < this.x + 15 &&
+        mouseY > this.y - 60 &&
+        mouseY < this.y - 20
+      ) {
+        console.log("figure Pressed!");
+        this.dragg = true;
+        return true
+      }else{
+        return false
+      }
+    }
+    disableDragg() {
+      this.dragg = false;
+    }
+  }
+  
+  class LambyEyes {
+    constructor(startX, startY, s) {
+      this.x = startX;
+      this.y = startY;
+      this.scale = 2;
+      this.dragg = false;
+    }
+  
+    update() {
+      if (this.dragg == true) {
+        this.x = mouseX;
+        this.y = mouseY;
+      }
+    }
+  
+    display() {
+      push();
+      translate(this.x, this.y);
+      scale(this.scale);
+      noStroke();
+      fill("black");
+      circle(-20, -60, 8);
+      ellipse(-20, -63, 12, 3);
+      circle(20, -60, 8);
+      ellipse(20, -63, 12, 3);
+  
+      
+      // noFill();
+      // stroke(0);
+      // rect(-30,-65,60,10)
+      pop();
+    }
+    checkMousePressed() {
+      if (
+        mouseX > this.x - 30 &&
+        mouseX < this.x + 30 &&
+        mouseY > this.y - 65 &&
+        mouseY < this.y - 55
+      ) {
+        console.log("figure Pressed!");
+        this.dragg = true;
+        return true
+      }else{
+        return false
+      }
+    }
+    disableDragg() {
+      this.dragg = false;
+    }
+  }
+  
+  class LambyBlush {
+    constructor(startX, startY, s) {
+      this.x = startX;
+      this.y = startY;
+      this.scale = 2;
+      this.dragg = false;
+    }
+  
+    update() {
+      if (this.dragg == true) {
+        this.x = mouseX;
+        this.y = mouseY;
+      }
+    }
+  
+    display() {
+      push();
+      translate(this.x, this.y);
+      scale(this.scale);
+      noStroke();
+      fill(255, 224, 229);
+      ellipse(-25, -43, 12, 8);
+      ellipse(25, -43, 12, 8);
+      
+      // noFill();
+      // stroke(0);
+      // rect(-35,-50,70,15)
+      pop();
+    }
+    checkMousePressed() {
+      if (
+        mouseX > this.x - 35 &&
+        mouseX < this.x + 35 &&
+        mouseY > this.y - 50 &&
+        mouseY < this.y - 35
+      ) {
+        console.log("figure Pressed!");
+        this.dragg = true;
+        return true
+      }else{
+        return false
+      }
+    }
+    disableDragg() {
+      this.dragg = false;
+    }
+  }
+  
+  class LambyBow {
+    constructor(startX, startY, s) {
+      this.x = startX;
+      this.y = startY;
+      this.scale = 2;
+      this.dragg = false;
+    }
+  
+    update() {
+      if (this.dragg == true) {
+        this.x = mouseX;
+        this.y = mouseY;
+      }
+    }
+  
+    display() {
+      push();
+      translate(this.x, this.y);
+      scale(this.scale);
+      stroke(8);
+      fill(135, 34, 179);
+      ellipse(-10,-90,18,21);
+      ellipse(10,-90,18,21);
+      circle(0,-90,13);
+      
+      // noFill();
+      // stroke(0);
+      // rect(-20,-100,40,20)
+      pop();
+    }
+    checkMousePressed() {
+      if (
+        mouseX > this.x - 20 &&
+        mouseX < this.x + 20 &&
+        mouseY > this.y - 100 &&
+        mouseY < this.y - 80
+      ) {
+        console.log("figure Pressed!");
+        this.dragg = true;
+        return true
+      }else{
+        return false
+      }
+    }
+    disableDragg() {
+      this.dragg = false;
+    }
+  }
+  
+  
+  class LambyBody {
+    constructor(startX, startY, s) {
+      this.x = startX;
+      this.y = startY;
+      this.scale = 2;
+      this.dragg = false;
+    }
+  
+    update() {
+      if (this.dragg == true) {
+        this.x = mouseX;
+        this.y = mouseY;
+      }
+    }
+  
+    display() {
+      push();
+      translate(this.x, this.y);
+      scale(this.scale);
+      noStroke();
+      //feet
+      noStroke();
+      fill(255, 199, 207);
+      rect(-20, 15, 16, 32, 10);
+      rect(5, 15, 16, 32, 10);
+      //hands
+      noStroke();
+      fill(255, 199, 207);
+      rect(10, -15, 40, 12, 20);
+      rect(-50, -15, 40, 12, 20);
+      //body
+      noStroke();
+      fill("white");
+      ellipse(0, 0, 58, 60);
+      //head
+      noStroke();
+      fill("white");
+      ellipse(0, -50, 75, 75);
+      //ears
+      noStroke();
+      fill("white");
+      circle(-29, -80, 15);
+      circle(29, -80, 15);
+      fill(255, 224, 229);
+      circle(-29, -80, 8);
+      circle(29, -80, 8);
+      //belly
+      noStroke();
+      fill(255, 224, 229);
+      ellipse(0, 5, 25, 25);
+      
+      // noFill();
+      // stroke(0);
+      // rect(-50,-90,100,140)
+      pop();
+    }
+    checkMousePressed() {
+      if (
+        mouseX > this.x - 50 &&
+        mouseX < this.x + 50 &&
+        mouseY > this.y - 90 &&
+        mouseY < this.y + 50
+      ) {
+        console.log("figure Pressed!");
+        this.dragg = true;
+        return true
+      }else{
+        return false
+      }
+    }
+    disableDragg() {
+      this.dragg = false;
+    }
+  }
   
   function mousePressed() {
     console.log("hi");
@@ -630,7 +930,7 @@ class flowerPetals {
     // gmouth.checkMousePressed();
     // gblush.checkMousePressed();
     // ghat.checkMousePressed();
-    let parts = [ghat, fpetals, gblush, fblush, gmouth, fmouth, geyes, feyes, gbody, fbody];
+    let parts = [lbow, ghat, fpetals, lblush, gblush, fblush,lmouth, gmouth, fmouth, leyes, geyes, feyes, lbody, gbody, fbody];
 
     for(let i = 0; i < 5; i++){
       // console.log(parts[i])
@@ -660,6 +960,13 @@ class flowerPetals {
     gmouth.disableDragg();
     gblush.disableDragg();
     ghat.disableDragg();
+
+    //lamby
+    lbody.disableDragg();
+    leyes.disableDragg();
+    lmouth.disableDragg();
+    lblush.disableDragg();
+    lbow.disableDragg();
   
   }
   
