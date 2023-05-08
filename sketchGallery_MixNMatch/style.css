@@ -12,8 +12,47 @@ canvas {
 
 h1{
     font-family: sans-serif;
+    font-size: 30px;
       color: rgb(233, 129, 144);
   }
+
+a{
+    font-family: sans-serif;
+    font-size: 20px;
+      color: rgb(233, 129, 144);
+}
+
+
+.myImage {
+    width: 300px;
+    border: 2px black dashed;
+}
+
+.imageBox {
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+
+    padding: 15px;
+    margin: 10px;
+
+    background-color: chartreuse;
+}
+
+.secondDiv {
+    background-color: crimson;
+    position: absolute;
+    top: 200px;
+    left: 430px;
+}
+
+.thirdDiv {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+}
+
+
 
 /* 
 the "#" let's us style 
