@@ -930,9 +930,9 @@ class flowerPetals {
     // gmouth.checkMousePressed();
     // gblush.checkMousePressed();
     // ghat.checkMousePressed();
-    let parts = [lbow, ghat, fpetals, lblush, gblush, fblush,lmouth, gmouth, fmouth, leyes, geyes, feyes, lbody, gbody, fbody];
+    let parts = [lbow, ghat, fpetals, lblush, gblush, fblush, lmouth, gmouth, fmouth, leyes, geyes, feyes, lbody, gbody, fbody];
 
-    for(let i = 0; i < 5; i++){
+    for(let i = 0; i < 15; i++){
       // console.log(parts[i])
       let returnValue = parts[i].checkMousePressed();
       if(returnValue == true){
